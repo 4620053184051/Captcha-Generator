@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Captcha Generator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+<nav class="navbar">
+  <div class="nav-container">
+    <div class="logo">
+      <img src="logoCG.png" alt="Captcha Logo" />
+    </div>
+    <ul class="nav-links">
+      <li><a href="#about">What is CAPTCHA?</a></li>
+      <li><a href="#generate">Generate Own CAPTCHA</a></li>
+      <li><a href="#download">Download CAPTCHA</a></li>
+      <li><a href="#contact">Contact Us</a></li>
+    </ul>
+  </div>
+<input type="checkbox" id="theme-toggle" class="theme-toggle" hidden />
+<label for="theme-toggle" class="theme-switch" aria-label="Toggle dark / light mode">
+  <span class="sun">☀️</span>
+  <span class="moon">🌙</span>
+</label>
+</nav>
+  <div class="main-container">
+    <h1>🔐 Captcha Generator</h1>
+    <div class="mode-buttons">
+      <button onclick="setCaptchaMode('text')">Text Captcha</button>
+      <button onclick="setCaptchaMode('math')">Math Captcha</button>
+      <button onclick="setCaptchaMode('audio')">Audio Captcha</button>
+    </div>
+    <div id="captcha-area" class="captcha-area hidden">
+      <div class="captcha-display">
+        <span id="captcha-text">Captcha</span>
+        <div class="icons">
+          <button onclick="playCaptchaAudio()" title="Play Audio">🔊</button>
+          <button onclick="generateCaptcha()" title="Refresh">🔁</button>
+        </div>
+      </div>
+
+      <input type="text" id="userInput" placeholder="Enter your answer" />
+      <button onclick="validateCaptcha()">Verify</button>
+      <p id="message"></p>
+    </div>
+  </div>
+
+  <script src="script.js"></script>
+</body>
+</html>
